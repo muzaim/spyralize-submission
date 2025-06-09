@@ -266,7 +266,7 @@ nav ul li a.always-active {
 
 .error-message {
 	position: absolute;
-	bottom: -3rem;
+	bottom: -2.2rem;
 	left: 0;
 	background-color: #ff7777;
 	color: #ffe5e5;
@@ -1044,70 +1044,6 @@ h2 {
 
 /* MEDIA QUERIES */
 @media (max-width: 768px) {
-	.promotion-section {
-		flex-direction: column;
-		height: auto;
-	}
-
-	.promotion-section .left,
-	.promotion-section .right {
-		position: relative;
-		width: 100%;
-		padding: 30px;
-	}
-
-	.promotion-section .left {
-		margin-top: -100px;
-		top: 100px;
-		left: 0;
-		height: 700px;
-		background-size: cover;
-		background: url("/images/waves/wave4.svg") no-repeat center,
-			url("/images/waves/wave5.svg") no-repeat center;
-	}
-
-	.promotion-section .right {
-		height: 50%;
-		display: flex;
-		justify-content: end;
-		align-items: end;
-		padding: 60px;
-		box-sizing: border-box; /* <-- Tambahkan ini */
-	}
-
-	.play-wrapper {
-		display: none;
-	}
-
-	.play-wrapper-left {
-		display: block;
-		position: absolute;
-		bottom: -50px;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-
-	.circle.outer-circle {
-		width: 180px;
-		height: 180px;
-		background-color: rgba(255, 255, 255, 0.2);
-		border-radius: 50%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.circle .inner-circle {
-		width: 130px;
-		height: 130px;
-		background-color: rgba(16, 185, 129, 0.5);
-		border-radius: 50%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border: 2px solid #fff;
-	}
-
 	html,
 	body {
 		height: 100%;
@@ -1171,7 +1107,7 @@ h2 {
 	.wave-container {
 		width: 1300px;
 		overflow: hidden;
-		top: -110px;
+		top: -90px;
 	}
 
 	.article-section {
@@ -1319,6 +1255,70 @@ h2 {
 
 	/* Start Promotion */
 	.promotion-section {
+		flex-direction: column;
+		height: auto;
+	}
+
+	.promotion-section .left,
+	.promotion-section .right {
+		position: relative;
+		width: 100%;
+		padding: 30px;
+	}
+
+	.promotion-section .left {
+		margin-top: -100px;
+		top: 100px;
+		left: 0;
+		height: 700px;
+		background-size: cover;
+		background: url("/images/waves/wave4.svg") no-repeat center,
+			url("/images/waves/wave5.svg") no-repeat center;
+	}
+
+	.promotion-section .right {
+		height: 50%;
+		display: flex;
+		justify-content: end;
+		align-items: end;
+		padding: 60px;
+		box-sizing: border-box; /* <-- Tambahkan ini */
+	}
+
+	.play-wrapper {
+		display: none;
+	}
+
+	.play-wrapper-left {
+		display: block;
+		position: absolute;
+		bottom: -50px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.circle.outer-circle {
+		width: 180px;
+		height: 180px;
+		background-color: rgba(255, 255, 255, 0.2);
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.circle .inner-circle {
+		width: 130px;
+		height: 130px;
+		background-color: rgba(16, 185, 129, 0.5);
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 2px solid #fff;
+	}
+
+	.promotion-section {
 		display: flex;
 		flex-direction: column;
 	}
@@ -1453,6 +1453,12 @@ h2 {
 
 	.form-row {
 		flex-direction: column;
+	}
+	.form-group input {
+		height: 60px !important;
+	}
+	.form-group select {
+		height: 60px !important;
 	}
 	/* End Header */
 
