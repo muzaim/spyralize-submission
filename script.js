@@ -9,14 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
 		link.classList.add("active");
 	}
 
-	// Saat klik link navigasi
 	navLinks.forEach((link) => {
 		link.addEventListener("click", function () {
 			setActive(this);
 		});
 	});
 
-	// Saat scroll, aktifkan Home jika scrollY di atas
 	window.addEventListener("scroll", () => {
 		if (window.scrollY === 0) {
 			const homeLink = document.querySelector('nav ul li a[href="#"]');
@@ -62,7 +60,6 @@ const textEl = document.getElementById("testimonial-text");
 const testimonialEl = document.querySelector(".testimonial");
 
 function updateTestimonial(index) {
-	// Start fade out
 	testimonialEl.classList.add("fade-out");
 
 	setTimeout(() => {
@@ -77,15 +74,13 @@ function updateTestimonial(index) {
 
 		currentIndex = index;
 
-		// Remove fade-out, add fade-in
 		testimonialEl.classList.remove("fade-out");
 		testimonialEl.classList.add("fade-in");
 
-		// Remove fade-in class after animation done
 		setTimeout(() => {
 			testimonialEl.classList.remove("fade-in");
-		}, 400); // match transition duration
-	}, 300); // wait fade-out before updating content
+		}, 400);
+	}, 300);
 }
 
 document.querySelector(".arrow.left").addEventListener("click", () => {
@@ -122,7 +117,6 @@ testimonialEl.addEventListener("touchstart", (e) => {
 testimonialEl.addEventListener("touchmove", (e) => {
 	if (!isDragging) return;
 	const deltaX = e.touches[0].clientX - startX;
-	// Optional: bisa tambahkan efek drag visual di sini
 });
 
 testimonialEl.addEventListener("touchend", (e) => {
@@ -132,11 +126,9 @@ testimonialEl.addEventListener("touchend", (e) => {
 
 	if (Math.abs(diff) > 50) {
 		if (diff < 0) {
-			// Swipe left
 			const newIndex = (currentIndex + 1) % testimonials.length;
 			updateTestimonial(newIndex);
 		} else {
-			// Swipe right
 			const newIndex =
 				(currentIndex - 1 + testimonials.length) % testimonials.length;
 			updateTestimonial(newIndex);
@@ -157,11 +149,9 @@ testimonialEl.addEventListener("mouseup", (e) => {
 
 	if (Math.abs(diff) > 50) {
 		if (diff < 0) {
-			// Drag left
 			const newIndex = (currentIndex + 1) % testimonials.length;
 			updateTestimonial(newIndex);
 		} else {
-			// Drag right
 			const newIndex =
 				(currentIndex - 1 + testimonials.length) % testimonials.length;
 			updateTestimonial(newIndex);
@@ -176,7 +166,7 @@ const iframe = document.getElementById("youtubeVideo");
 const closeBtn = document.getElementById("closePopup");
 
 playTrigger.addEventListener("click", function () {
-	const videoId = "UNQhuFL6CWg"; // Ganti dengan ID video YouTube kamu
+	const videoId = "UNQhuFL6CWg";
 	iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
 	popup.style.display = "block";
 });
@@ -186,7 +176,6 @@ closeBtn.addEventListener("click", function () {
 	popup.style.display = "none";
 });
 
-// Support keyboard accessibility for close button (ESC key and Enter/Space)
 document.addEventListener("keydown", function (e) {
 	if (e.key === "Escape" && popup.style.display === "block") {
 		iframe.src = "";
@@ -209,7 +198,7 @@ toggle.addEventListener("click", () => {
 	navLinks.classList.toggle("show");
 });
 
-// Tutup menu saat salah satu link diklik
+// Close the menu when a link is clicked
 const links = navLinks.querySelectorAll("a");
 links.forEach((link) => {
 	link.addEventListener("click", () => {
@@ -229,7 +218,6 @@ form.addEventListener("submit", function (e) {
 	inputs.forEach((input) => {
 		const parent = input.closest(".form-group");
 
-		// Hapus error sebelumnya
 		const oldError = parent.querySelector(".error-message");
 		if (oldError) oldError.remove();
 
@@ -248,14 +236,13 @@ form.addEventListener("submit", function (e) {
 	});
 
 	if (isValid) {
-		// Redirect ke halaman thank you setelah 0.5 detik
 		setTimeout(() => {
 			window.location.href = "thankyou.html";
 		}, 500);
 	}
 });
 
-// Hilangkan error saat input/select fokus
+// Remove error message when input is focused
 inputs.forEach((input) => {
 	input.addEventListener("focus", () => {
 		const parent = input.closest(".form-group");
