@@ -1,0 +1,69 @@
+<div class="wave-stack">
+    <!-- Merah di belakang -->
+    <svg width="779" height="648" viewBox="0 0 779 648" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0H742.597C655.445 274 857.597 323.5 742.597 648H0V0Z" fill="red" fill-opacity="1" />
+    </svg>
+
+    <!-- Hijau di depan -->
+    <svg width="755" height="648" viewBox="0 0 755 648" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 0H719.719C635.252 274 831.175 323.5 719.719 648H0V0Z" fill="url(#paint0_linear_1_237)" />
+        <defs>
+            <linearGradient id="paint0_linear_1_237" x1="377.5" y1="0" x2="377.5" y2="648"
+                gradientUnits="userSpaceOnUse">
+                <stop stop-color="#305D52" />
+                <stop offset="1" stop-color="#153F38" />
+            </linearGradient>
+        </defs>
+    </svg>
+</div>
+
+<style>
+    .promotion-section {
+        position: relative;
+        height: 600px;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .promotion-section .right {
+        position: absolute;
+        inset: 0;
+        /* shorthand untuk top: 0; right: 0; bottom: 0; left: 0 */
+        width: 100%;
+        height: 100%;
+
+        background: url("/images/hero.svg");
+        background-size: cover;
+        background-position: right center;
+        background-repeat: no-repeat;
+        background-color: rgba(48, 93, 82, 0.2);
+
+        z-index: 1;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 60px;
+    }
+
+    .promotion-section .left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 60%;
+        /* bisa diganti 50%, 70%, dll */
+        height: 100%;
+
+        background: url("/images/horn2.svg") no-repeat center,
+            url("/images/horn4.svg") no-repeat center;
+
+        z-index: 2;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 60px;
+        color: #fff;
+    }
+</style>
