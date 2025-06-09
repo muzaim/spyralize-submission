@@ -2,7 +2,7 @@
 	--color-primary: #5bc8af;
 	--color-secondary: #297c6b;
 	--color-bg: #194d44;
-	--color-bg-lighter: #3f8a7a;
+	--color-bg-darker:rgb(29, 69, 60);
 	--color-main-text: #333;
 	--color-faded-text: #eaeaea;
 }
@@ -114,7 +114,11 @@ header {
 
 #nav-links a {
 	text-decoration: none;
-	/* color: white; */
+	transition: color 0.3s ease;
+}
+
+#nav-links a:hover{
+	color: var(--color-primary);
 }
 
 nav {
@@ -743,6 +747,17 @@ h2 {
 .product-buttons-wrapper button:hover {
 	color: #fff;
 }
+
+.info-icon {
+	width: 18px;
+	height: 18px;
+	display: none;
+	transition: opacity 0.2s ease;
+}
+  .btn.outline:hover .info-icon {
+	display: inline-block;
+  }
+  
 /* End Product */
 
 /* Start Promotion */
@@ -1043,6 +1058,12 @@ h2 {
 	display: inline;
 	margin-right: 10px;
 	position: relative;
+	transition: color 0.3s ease;
+}
+
+.footer-wrapper ul li:hover {
+	color: var(--color-primary);
+
 }
 
 .footer-wrapper {
@@ -1063,28 +1084,6 @@ h2 {
 	display: flex;
 	gap: 20px;
 }
-
-/*HEHE*/
-.wave-stack {
-	position: relative;
-	height: 648px;
-	width: 100%;
-}
-
-.wave-stack svg {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-.wave-stack svg:nth-child(1) {
-	z-index: 0;
-}
-
-.wave-stack svg:nth-child(2) {
-	z-index: 1;
-}
-/*HEHE*/
 /* End Footer */
 
 /* MEDIA QUERIES */
@@ -1171,7 +1170,7 @@ h2 {
 	.article-images img {
 		width: 30%;
 	}
-
+	
 	.article-wrapper {
 		padding: 0 20px;
 	}
@@ -1305,7 +1304,6 @@ h2 {
 	}
 	.promotion-section .left {
 		width: 100%;
-		background-color: red;
 	}
 
 	.promotion-section {
@@ -1347,22 +1345,21 @@ h2 {
 }
 
 @media (max-width: 576px) {
-	
 	#nav-links {
-		background: var(--color-bg-lighter);
+		background: var(--color-bg-darker);
 		position: absolute;
-		top: 60px;
+		top: 70px;
 		right: 0;
 		flex-direction: column;
 		width: 100%;
-		text-align: right;
+		text-align: left;
 		padding: 20px 30px;
 		display: none;
-		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+		box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 		z-index: 1000;
 		transition: all 0.3s ease;
-		border-radius: 0 0 12px 12px;
-		gap: 15px;
+		border-radius: 0 0 40px 40px;
+		gap: 10px;
 		font-family: "Poppins", sans-serif;
 	}
 
@@ -1394,6 +1391,7 @@ h2 {
 
 	.call-now {
 		margin-top: 15px;
+		display: flex;
 	}
 
 	.call-now .phone {
@@ -1514,6 +1512,8 @@ h2 {
 		height: 200px;
 		transform: translateY(-50%);
 		z-index: 1;
+		border-radius: 10px 10px 0 0;
+
 	}
 
 	.testimonial-header {
