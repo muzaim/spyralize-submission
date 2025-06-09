@@ -1311,7 +1311,7 @@ h2 {
 		justify-content: end;
 		align-items: end;
 		padding: 60px;
-		box-sizing: border-box; /* <-- Tambahkan ini */
+		box-sizing: border-box;
 	}
 
 	.play-wrapper {
@@ -1573,6 +1573,10 @@ h2 {
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: end;
+	}
+
+	.testimonial-header h1 {
+		margin-top: 50px;
 	}
 
 	.testimonial-header img {
