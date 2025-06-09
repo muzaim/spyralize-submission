@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <!--START HEADER-->
+    <!-- START HEADER -->
     <header>
         <nav>
             <img class="logo" src="/images/logo/logo.svg" alt="">
@@ -81,26 +81,25 @@
                         <div class="form-row">
                             <div class="form-group full-width">
                                 <select id="country" name="country">
-                                    <option value="" disabled selected> Country</option>
-                                    <option value="indonesia">Indonesia</option>
-                                    <option value="malaysia">Malaysia</option>
-                                    <option value="singapore">Singapore</option>
-                                    <option value="thailand">Thailand</option>
-                                    <option value="philippines">Philippines</option>
+                                    <option value="" disabled selected>Country</option>
+                                    <option value="germany">Germany</option>
+                                    <option value="france">France</option>
+                                    <option value="italy">Italy</option>
+                                    <option value="spain">Spain</option>
+                                    <option value="netherlands">Netherlands</option>
                                 </select>
                             </div>
                         </div>
 
                         <button type="submit" class="btn fill form-submit">Submit</button>
                     </form>
-
                 </div>
             </div>
         </div>
     </header>
-    <!--END HEADER-->
+    <!-- END HEADER -->
 
-    <!--START ARTICLES-->
+    <!-- START ARTICLES -->
     <div class="wave-container">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path d="M0,70 C330,-150 890,240 1200,85 L1200,120 L0,120 Z" class="shape-fill shape-fill-darker"></path>
@@ -159,9 +158,9 @@
             </div>
         </div>
     </section>
-    <!--END ARTICLES-->
+    <!-- END ARTICLES -->
 
-    <!--START TESTIMONY-->
+    <!-- START TESTIMONY -->
     <section class="testimony-section">
         <div class="testimony-section-wrapper">
             <div class="arrow left">
@@ -197,9 +196,9 @@
             </div>
         </div>
     </section>
-    <!--END TESTIMONY-->
+    <!-- END TESTIMONY -->
 
-    <!--START PRODUCT -->
+    <!-- START PRODUCT -->
     <section class="product-section" id="contact">
         <div class="wrapper product-wrapper">
             <div class="text-outline-articles">
@@ -278,9 +277,9 @@
 
         </div>
     </section>
-    <!--END PRODUCT -->
+    <!-- END PRODUCT -->
 
-    <!--START PROMOTION-->
+    <!-- START PROMOTION -->
     <section class="promotion-section">
         <div class="left">
             <div>
@@ -330,6 +329,18 @@
                     <!-- Repeat for other items -->
                 </ul>
             </div>
+            <div class="play-wrapper-left">
+                <div class="circle outer-circle">
+                    <div class="circle inner-circle">
+                        <button class="play-button" id="playTrigger" aria-label="Play video">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#fff"
+                                viewBox="0 0 24 24">
+                                <path d="M8 5v14l11-7z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="right">
             <div class="play-wrapper">
@@ -345,23 +356,25 @@
                 </div>
             </div>
 
-            <!-- Popup Modal Video -->
-            <div id="videoPopup" class="video-popup" role="dialog" aria-modal="true" aria-labelledby="videoTitle">
-                <div class="video-popup-content">
-                    <span class="close-btn" id="closePopup" role="button" tabindex="0"
-                        aria-label="Close video popup">&times;</span>
-                    <iframe id="youtubeVideo" width="100%" height="100%" src="" frameborder="0" allowfullscreen
-                        allow="autoplay; encrypted-media" title="YouTube video player"></iframe>
-                </div>
-            </div>
 
             <img src="/images/logo/logo.svg" alt="Logo" />
         </div>
 
     </section>
-    <!--END PROMOTION-->
 
-    <!--START FOOTER-->
+    <!-- Popup Modal Video -->
+    <div id="videoPopup" class="video-popup" role="dialog" aria-modal="true" aria-labelledby="videoTitle">
+        <div class="video-popup-content">
+            <span class="close-btn" id="closePopup" role="button" tabindex="0"
+                aria-label="Close video popup">&times;</span>
+            <iframe id="youtubeVideo" width="100%" height="100%" src="" frameborder="0" allowfullscreen
+                allow="autoplay; encrypted-media" title="YouTube video player"></iframe>
+        </div>
+    </div>
+
+    <!-- END PROMOTION -->
+
+    <!-- START FOOTER -->
     <footer>
         <div class="wrapper footer-wrapper">
             <div>@2021 Get an Intervention Inc. All rights reserved.</div>

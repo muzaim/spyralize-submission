@@ -160,15 +160,17 @@ testimonialEl.addEventListener("mouseup", (e) => {
 });
 
 // Start Popup
-const playTrigger = document.getElementById("playTrigger");
+const playButtons = document.querySelectorAll(".play-button");
 const popup = document.getElementById("videoPopup");
 const iframe = document.getElementById("youtubeVideo");
 const closeBtn = document.getElementById("closePopup");
 
-playTrigger.addEventListener("click", function () {
-	const videoId = "UNQhuFL6CWg";
-	iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-	popup.style.display = "block";
+playButtons.forEach((button) => {
+	button.addEventListener("click", function () {
+		const videoId = "UNQhuFL6CWg";
+		iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+		popup.style.display = "block";
+	});
 });
 
 closeBtn.addEventListener("click", function () {
@@ -185,6 +187,14 @@ document.addEventListener("keydown", function (e) {
 
 closeBtn.addEventListener("keydown", function (e) {
 	if (e.key === "Enter" || e.key === " ") {
+		iframe.src = "";
+		popup.style.display = "none";
+	}
+});
+
+// ✅ New: Close on outside click
+popup.addEventListener("click", function (e) {
+	if (e.target === popup) {
 		iframe.src = "";
 		popup.style.display = "none";
 	}
@@ -208,32 +218,28 @@ links.forEach((link) => {
 
 // Form
 const form = document.querySelector("form");
-const inputs = form.querySelectorAll("input, select");
+const firstNameInput = form.querySelector("#firstname");
 
 form.addEventListener("submit", function (e) {
 	e.preventDefault();
 
 	let isValid = true;
+	const parent = firstNameInput.closest(".form-group");
 
-	inputs.forEach((input) => {
-		const parent = input.closest(".form-group");
+	const oldError = parent.querySelector(".error-message");
+	if (oldError) oldError.remove();
 
-		const oldError = parent.querySelector(".error-message");
-		if (oldError) oldError.remove();
+	if (!firstNameInput.value.trim()) {
+		firstNameInput.classList.add("error");
+		isValid = false;
 
-		if (!input.value.trim()) {
-			input.classList.add("error");
-			isValid = false;
-
-			const errorDiv = document.createElement("div");
-			errorDiv.classList.add("error-message");
-			errorDiv.textContent =
-				"This field can’t be empty. Please fill it in.";
-			parent.appendChild(errorDiv);
-		} else {
-			input.classList.remove("error");
-		}
-	});
+		const errorDiv = document.createElement("div");
+		errorDiv.classList.add("error-message");
+		errorDiv.textContent = "This field can’t be empty. Please fill it in.";
+		parent.appendChild(errorDiv);
+	} else {
+		firstNameInput.classList.remove("error");
+	}
 
 	if (isValid) {
 		setTimeout(() => {
@@ -243,11 +249,10 @@ form.addEventListener("submit", function (e) {
 });
 
 // Remove error message when input is focused
-inputs.forEach((input) => {
-	input.addEventListener("focus", () => {
-		const parent = input.closest(".form-group");
-		const oldError = parent.querySelector(".error-message");
-		if (oldError) oldError.remove();
-		input.classList.remove("error");
-	});
+
+firstNameInput.addEventListener("focus", () => {
+	const parent = firstNameInput.closest(".form-group");
+	const oldError = parent.querySelector(".error-message");
+	if (oldError) oldError.remove();
+	firstNameInput.classList.remove("error");
 });
